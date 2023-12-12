@@ -11,6 +11,7 @@ body {
     --header-height-difference: calc(var(--header-outer-height) - var(--header-inner-height));
 }
 
+/*============ Header Styles ============*/
 .header {
     position: absolute;
     width: 95%;
@@ -22,30 +23,22 @@ body {
     align-items: center;
     padding: 10px 50px;
     font-size: 30px;
-
-    /* Make it stick */
     height: var(--header-outer-height);
     position: sticky;
     top: calc(var(--header-height-difference) * -1);
-    /* Multiply by -1 to get a negative value */
-
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
 }
 
-.responsive-wrapper {
+.responsive_wrapper {
     width: 100%;
-    /* max-width: 1280px; */
     margin-left: auto;
     margin-right: auto;
 }
 
 .header_inner {
-    /* Make it stick */
     height: var(--header-inner-height);
     position: sticky;
     top: 0;
-
-    /* Other */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -65,7 +58,7 @@ body {
     list-style: none;
     display: flex;
     justify-content: center;
-    padding-right: 180px;
+    padding-right: 20%;
 }
 
 .header_navigation li:nth-child(n+2):nth-child(-n+3) {
@@ -97,6 +90,7 @@ body {
     cursor: pointer;
 }
 
+/*============ Footer Styles ============*/
 .footer {
     position: relative;
     user-select: none;
@@ -109,8 +103,8 @@ body {
     justify-content: space-between;
 }
 
+/*============ Center Container Styles ============*/
 .container {
-
     flex-grow: 1;
     /* Allows the container to grow and push the footer down */
     width: 65%;
@@ -466,4 +460,57 @@ input[type="submit"]:hover {
     .contact_method nav {
         margin-bottom: 10px;
     }
+}
+
+/*Project*/
+
+.project_item {
+    position:relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.project_item:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgb(80, 123, 187);
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.project_item:hover::after {
+    top: 0;
+    opacity: 0.9;
+}
+
+.project_item:hover{
+    .projects__btn {
+        opacity: 1;
+    }
+}
+
+.projects__btns {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    text-align: center;
+}
+
+.projects__btn {
+    opacity: 0;
+    color: black;
+    transition: all 0.5s ease-in-out;
+}
+
+.projects__btn:hover {
+    color: aqua;
 }
