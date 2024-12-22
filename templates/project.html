@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuah Jing Quan</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/script.js' %}" defer></script>
+    <!-- <link rel="icon" type="image/jpg" href="asset/Images/cat.jpg"> -->
+    <link rel="icon" type="image/jpg" href="{% static 'asset/Images/cat.jpg' %}">
+    <link href="{% static 'asset/fontawesome/css/all.min.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="main_container">
+        <div class="header">
+            <div class="header_logo">
+                <p>CHUAH JING QUAN</p>
+            </div>
+            <div class="header_navigation">
+                <ul>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/skill">Skill</a></li>
+                    <li><a href="/project" class="selected">Project</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/journal">Journal</a></li>
+                </ul>
+            </div>
+            <div class="header_tools">
+                <span class="mode_icon">&#127774;</span>
+            </div>
+        </div>
+
+        <div class="container">
+            <button type="button" class="collapsible active">Software Project<i class="fas fa-chevron-up"></i></button>
+            <div class="content" style="display: block;">
+                <div class="skill-flex-container">
+                    <nav class="project_item">
+                        <img src="{% static 'asset/Images/Other.png' %}" width="150" height="150">
+                        <div class="projects__btns">
+                            <a href="#!" class="projects__btn">
+                                <i class="fas fa-eye"></i><br> Preview
+                            </a>
+                            <a href="#!" class="projects__btn">
+                                <i class="fab fa-github"></i><br> Github
+                            </a>
+                        </div>
+                        <p style="font-size: 15px;font-weight: 500;">Bakery E-commerce System</p>
+                    </nav>
+                    <nav class="project_item">
+                        <img src="{% static 'asset/Images/Other.png' %}" width="150" height="150">
+                        <div class="projects__btns">
+                            <a href="#!" class="projects__btn">
+                                <i class="fas fa-eye"></i><br> Preview
+                            </a>
+                            <a href="#!" class="projects__btn">
+                                <i class="fab fa-github"></i><br> Github
+                            </a>
+                        </div>
+                        <p style="font-size: 15px;font-weight: 500;">Library Documentaty System</p>
+                    </nav>
+                    <nav class="project_item">
+                        <img src="{% static 'asset/Images/Other.png' %}" width="150" height="150">
+                        <div class="projects__btns">
+                            <a href="#!" class="projects__btn">
+                                <i class="fas fa-eye"></i><br> Preview
+                            </a>
+                            <a href="#!" class="projects__btn">
+                                <i class="fab fa-github"></i><br> Github
+                            </a>
+                        </div>
+                        <p style="font-size: 15px;font-weight: 500;">Food Review Application</p>
+                    </nav>
+                    <nav class="project_item">
+                        <img src="{% static 'asset/Images/Other.png' %}" width="150" height="150">
+                        <div class="projects__btns">
+                            <a href="#!" class="projects__btn">
+                                <i class="fas fa-eye"></i><br> Preview
+                            </a>
+                            <a href="#!" class="projects__btn">
+                                <i class="fab fa-github"></i><br> Github
+                            </a>
+                        </div>
+                        <p style="font-size: 15px;font-weight: 500;">Index Body Mass (IBM) Calculator</p>
+                    </nav>
+                </div>
+            </div>
+
+            <button type="button" class="collapsible active">Artificial Intellifence (AI) Project<i
+                    class="fas fa-chevron-up"></i></button>
+            <div class="content" style="display: block;">
+                <div class="skill-flex-container">
+                    <nav class="project_item">
+                        <img src="{% static 'asset/Images/Other.png' %}" width="150" height="150">
+                        <div class="projects__btns">
+                            <a href="#!" class="projects__btn">
+                                <i class="fas fa-eye"></i><br> Preview
+                            </a>
+                            <a href="#!" class="projects__btn">
+                                <i class="fab fa-github"></i><br> Github
+                            </a>
+                        </div>
+                        <p style="font-size: 15px;font-weight: 500;">Prolog Rule-Based Chatbot</p>
+                    </nav>
+                    <nav class="project_item">
+                        <img src="{% static 'asset/Images/Other.png' %}" width="150" height="150">
+                        <div class="projects__btns">
+                            <a href="#!" class="projects__btn">
+                                <i class="fas fa-eye"></i><br> Preview
+                            </a>
+                            <a href="#!" class="projects__btn">
+                                <i class="fab fa-github"></i><br> Github
+                            </a>
+                        </div>
+                        <p style="font-size: 15px;font-weight: 500;">Weather Prediction Chatbot</p>
+                    </nav>
+                    <nav class="project_item">
+                        <img src="{% static 'asset/Images/Other.png' %}" width="150" height="150">
+                        <div class="projects__btns">
+                            <a href="#!" class="projects__btn">
+                                <i class="fas fa-eye"></i><br> Preview
+                            </a>
+                            <a href="#!" class="projects__btn">
+                                <i class="fab fa-github"></i><br> Github
+                            </a>
+                        </div>
+                        <p style="font-size: 15px;font-weight: 500;">DataBrick - Telecom Analysis</p>
+                    </nav>
+                    <nav class="project_item">
+                        <img src="{% static 'asset/Images/Other.png' %}" width="150" height="150">
+                        <div class="projects__btns">
+                            <a href="#!" class="projects__btn">
+                                <i class="fas fa-eye"></i><br> Preview
+                            </a>
+                            <a href="#!" class="projects__btn">
+                                <i class="fab fa-github"></i><br> Github
+                            </a>
+                        </div>
+                        <p style="font-size: 15px;font-weight: 500;">OpenCV - Image Processing</p>
+                    </nav>
+                    <nav class="project_item">
+                        <img src="{% static 'asset/Images/Other.png' %}" width="150" height="150">
+                        <div class="projects__btns">
+                            <a href="#!" class="projects__btn">
+                                <i class="fas fa-eye"></i><br> Preview
+                            </a>
+                            <a href="#!" class="projects__btn">
+                                <i class="fab fa-github"></i><br> Github
+                            </a>
+                        </div>
+                        <p style="font-size: 15px;font-weight: 500;">Intelligence System</p>
+                    </nav>
+                    <nav class="project_item">
+                        <img src="{% static 'asset/Images/Other.png' %}" width="150" height="150">
+                        <div class="projects__btns">
+                            <a href="#!" class="projects__btn">
+                                <i class="fas fa-eye"></i><br> Preview
+                            </a>
+                            <a href="#!" class="projects__btn">
+                                <i class="fab fa-github"></i><br> Github
+                            </a>
+                        </div>
+                        <p style="font-size: 15px;font-weight: 500;">AI Classification</p>
+                    </nav>
+                    <nav class="project_item">
+                        <img src="{% static 'asset/Images/Other.png' %}" width="150" height="150">
+                        <div class="projects__btns">
+                            <a href="#!" class="projects__btn">
+                                <i class="fas fa-eye"></i><br> Preview
+                            </a>
+                            <a href="#!" class="projects__btn">
+                                <i class="fab fa-github"></i><br> Github
+                            </a>
+                        </div>
+                        <p style="font-size: 15px;font-weight: 500;">AI Neural Network</p>
+                    </nav>
+                </div>
+            </div>
+
+            <button type="button" class="collapsible active">Other Project<i class="fas fa-chevron-up"></i></button>
+            <div class="content" style="display: block;">
+                <div class="skill-flex-container">
+                    <nav class="project_item">
+                        <img src="{% static 'asset/Images/Other.png' %}" width="150" height="150">
+                        <div class="projects__btns">
+                            <a href="#!" class="projects__btn">
+                                <i class="fas fa-eye"></i><br> Preview
+                            </a>
+                            <a href="#!" class="projects__btn">
+                                <i class="fab fa-github"></i><br> Github
+                            </a>
+                        </div>
+                        <p style="font-size: 15px;font-weight: 500;">PowerBI - Retails Analysis</p>
+                    </nav>
+                    <nav class="project_item">
+                        <img src="{% static 'asset/Images/Other.png' %}" width="150" height="150">
+                        <div class="projects__btns">
+                            <a href="#!" class="projects__btn">
+                                <i class="fas fa-eye"></i><br> Preview
+                            </a>
+                            <a href="#!" class="projects__btn">
+                                <i class="fab fa-github"></i><br> Github
+                            </a>
+                        </div>
+                        <p style="font-size: 15px;font-weight: 500;">Static Car Dashboard : Computer Graphic</p>
+                    </nav>
+                    <nav class="project_item">
+                        <img src="{% static 'asset/Images/Other.png' %}" width="150" height="150">
+                        <div class="projects__btns">
+                            <a href="#!" class="projects__btn">
+                                <i class="fas fa-eye"></i><br> Preview
+                            </a>
+                            <a href="#!" class="projects__btn">
+                                <i class="fab fa-github"></i><br> Github
+                            </a>
+                        </div>
+                        <p style="font-size: 15px;font-weight: 500;">Animated Car Dashboard : Computer Graphic</p>
+                    </nav>
+                    <nav class="project_item">
+                        <img src="{% static 'asset/Images/Other.png' %}" width="150" height="150">
+                        <div class="projects__btns">
+                            <a href="#!" class="projects__btn">
+                                <i class="fas fa-eye"></i><br> Preview
+                            </a>
+                            <a href="#!" class="projects__btn">
+                                <i class="fab fa-github"></i><br> Github
+                            </a>
+                        </div>
+                        <p style="font-size: 15px;font-weight: 500;">Cyber Security Research</p>
+                    </nav>
+                    <nav class="project_item">
+                        <img src="{% static 'asset/Images/Other.png' %}" width="150" height="150">
+                        <div class="projects__btns">
+                            <a href="#!" class="projects__btn">
+                                <i class="fas fa-eye"></i><br> Preview
+                            </a>
+                            <a href="#!" class="projects__btn">
+                                <i class="fab fa-github"></i><br> Github
+                            </a>
+                        </div>
+                        <p style="font-size: 15px;font-weight: 500;">Library Management System: DSA</p>
+                    </nav>
+                    <nav class="project_item">
+                        <img src="{% static 'asset/Images/Other.png' %}" width="150" height="150">
+                        <div class="projects__btns">
+                            <a href="#!" class="projects__btn">
+                                <i class="fas fa-eye"></i><br> Preview
+                            </a>
+                            <a href="#!" class="projects__btn">
+                                <i class="fab fa-github"></i><br> Github
+                            </a>
+                        </div>
+                        <p style="font-size: 15px;font-weight: 500;">Static Bar Chart Visualization</p>
+                    </nav>
+                    <nav class="project_item">
+                        <img src="{% static 'asset/Images/Other.png' %}" width="150" height="150">
+                        <div class="projects__btns">
+                            <a href="#!" class="projects__btn">
+                                <i class="fas fa-eye"></i><br> Preview
+                            </a>
+                            <a href="#!" class="projects__btn">
+                                <i class="fab fa-github"></i><br> Github
+                            </a>
+                        </div>
+                        <p style="font-size: 15px;font-weight: 500;">Interactive Bar Chart Visualization</p>
+                    </nav>
+                    <nav class="project_item">
+                        <img src="{% static 'asset/Images/Other.png' %}" width="150" height="150">
+                        <div class="projects__btns">
+                            <a href="#!" class="projects__btn">
+                                <i class="fas fa-eye"></i><br> Preview
+                            </a>
+                            <a href="#!" class="projects__btn">
+                                <i class="fab fa-github"></i><br> Github
+                            </a>
+                        </div>
+                        <p style="font-size: 15px;font-weight: 500;">Database Programming</p>
+                    </nav>
+                    <nav class="project_item">
+                        <img src="{% static 'asset/Images/Other.png' %}" width="150" height="150">
+                        <div class="projects__btns">
+                            <a href="#!" class="projects__btn">
+                                <i class="fas fa-eye"></i><br> Preview
+                            </a>
+                            <a href="#!" class="projects__btn">
+                                <i class="fab fa-github"></i><br> Github
+                            </a>
+                        </div>
+                        <p style="font-size: 15px;font-weight: 500;">Industrial Training</p>
+                    </nav>
+                    <nav class="project_item">
+                        <img src="{% static 'asset/Images/Other.png' %}" width="150" height="150">
+                        <div class="projects__btns">
+                            <a href="#!" class="projects__btn">
+                                <i class="fas fa-eye"></i><br> Preview
+                            </a>
+                            <a href="#!" class="projects__btn">
+                                <i class="fab fa-github"></i><br> Github
+                            </a>
+                        </div>
+                        <p style="font-size: 15px;font-weight: 500;">Heart Rate Monitoring System</p>
+                    </nav>
+                    <nav class="project_item">
+                        <img src="{% static 'asset/Images/Other.png' %}" width="150" height="150">
+                        <div class="projects__btns">
+                            <a href="#!" class="projects__btn">
+                                <i class="fas fa-eye"></i><br> Preview
+                            </a>
+                            <a href="#!" class="projects__btn">
+                                <i class="fab fa-github"></i><br> Github
+                            </a>
+                        </div>
+                        <p style="font-size: 15px;font-weight: 500;">Point of Sales (POS) System</p>
+                    </nav>
+                    <nav class="project_item">
+                        <img src="{% static 'asset/Images/Other.png' %}" width="150" height="150">
+                        <div class="projects__btns">
+                            <a href="#!" class="projects__btn">
+                                <i class="fas fa-eye"></i><br> Preview
+                            </a>
+                            <a href="#!" class="projects__btn">
+                                <i class="fab fa-github"></i><br> Github
+                            </a>
+                        </div>
+                        <p style="font-size: 15px;font-weight: 500;">Parallel Computing</p>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <script>
+            var collapseList = document.getElementsByClassName("collapsible");
+            var i;
+            for (i = 0; i < collapseList.length; i++) {
+                collapseList[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.display === "block") {
+                        content.style.display = "none";
+                    } else {
+                        content.style.display = "block";
+                    }
+                });
+            }
+        </script>
+    </div>
+
+    <div class="footer">
+        <p style="padding-left: 50px;">&copy; Copyright 2023</p>
+        <p style="margin-right: 20px;">Powered by &#9733; Chuah Jing Quan</p>
+        <div style="padding-right: 50px;">
+            <a href="https://github.com/quan1354" style="padding-right: 10px;"><img width="40px" src="{% static 'asset/Images/github.svg' %}"
+                    alt="GitHub"></a>
+            <a href="https://www.linkedin.com/in/chuah-jing-quan-796a80174"><img width="40px" src="{% static 'asset/Images/linkedin.svg' %}"
+                    alt="LinkedIn"></a>
+        </div>
+    </div>
+</body>
+<!-- <script src="script.js"></script> -->
+
+</html>

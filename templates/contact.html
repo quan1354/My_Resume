@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuah Jing Quan</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/script.js' %}" defer></script>
+    <!-- <link rel="icon" type="image/jpg" href="asset/Images/cat.jpg"> -->
+    <link rel="icon" type="image/jpg" href="{% static 'asset/Images/cat.jpg' %}">
+    <!-- <link href="./asset/fontawesome/css/all.min.css" rel="stylesheet"> -->
+    <link href="{% static 'asset/fontawesome/css/all.min.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main_container">
+        <div class="header">
+            <div class="header_logo">
+                <p>CHUAH JING QUAN</p>
+            </div>
+            <div class="header_navigation">
+                <ul>
+                    <li><a href="/about" >About</a></li>
+                    <li><a href="/skill">Skill</a></li>
+                    <li><a href="/project">Project</a></li>
+                    <li><a href="/contact" class="selected">Contact</a></li>
+                    <li><a href="/journal">Journal</a></li>
+                </ul>
+            </div>
+            <div class="header_tools">
+                <span class="mode_icon">&#127774;</span>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="contact_info">
+                <div class="contact_method">
+                    <nav>
+                        <i class="fa-solid fa-envelope fa-xl"></i>
+                        <span>jingquan1354@gmail.com</span>
+                    </nav>
+                    <nav>
+                        <i class="fa-solid fa-phone fa-xl"></i>
+                        <span style="text-wrap: nowrap;">019 - 796 8130</span>
+                    </nav>
+                    <nav>
+                        <i class="fa-solid fa-house fa-xl"></i>
+                        <span>Nibong Tebal, Penang, Malaysia</span>
+                    </nav>
+                </div>
+            </div>
+
+            <form action="https://formspree.io/f/xrgwnovr" method="post">
+                <div class="rows">
+                    <nav>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </nav>
+
+                    <nav>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </nav>
+                </div>
+
+                <label for="Subject">Subject:</label>
+                <input type="text" id="Subject" name="Subject" placeholder="Title" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
+
+                <input type="submit" value="Send Message">
+            </form>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p style="padding-left: 50px;">&copy; Copyright 2023</p>
+        <p style="margin-right: 20px;">Powered by &#9733; Chuah Jing Quan</p>
+        <div style="padding-right: 50px;">
+            <a href="https://github.com/quan1354" style="padding-right: 10px;"><img width="40px" src="{% static 'asset/Images/github.svg' %}"
+                    alt="GitHub"></a>
+            <a href="https://www.linkedin.com/in/chuah-jing-quan-796a80174"><img width="40px" src="{% static 'asset/Images/linkedin.svg' %}"
+                    alt="LinkedIn"></a>
+        </div>
+    </div>
+</body>
+<!-- <script src="script.js"></script> -->
+
+</html>

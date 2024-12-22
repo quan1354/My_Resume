@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuah Jing Quan</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/script.js' %}" defer></script>
+    <!-- <link rel="icon" type="image/jpg" href="asset/Images/cat.jpg"> -->
+    <link rel="icon" type="image/jpg" href="{% static 'asset/Images/cat.jpg' %}">
+    <link href="{% static 'asset/fontawesome/css/all.min.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main_container">
+        <div class="header">
+            <div class="header_logo">
+                <p>CHUAH JING QUAN</p>
+            </div>
+            <div class="header_navigation">
+                <ul>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/skill" class="selected">Skill</a></li>
+                    <li><a href="/project">Project</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/journal">Journal</a></li>
+                </ul>
+            </div>
+            <div class="header_tools">
+                <span class="mode_icon">&#127774;</span>
+            </div>
+        </div>
+
+        <div class="container">
+            <!--Programming Language-->
+            <button type="button" class="collapsible active" style="display: block;">Programming Language<i
+                    class="fas fa-chevron-up"></i></button>
+            <div class="content" style="display: block;">
+                <div>
+                    <div class="skill-flex-container">
+                        <nav>
+                            <img src="{% static 'asset/Images/C_.png' %}" width="100" height="100">
+                            <p style="font-size: 15px;font-weight: 500;">C#</p>
+                        </nav>
+                        <nav>
+                            <img src="{% static 'asset/Images/JavaScript_Icon.png' %}" width="100" height="100">
+                            <p style="font-size: 15px;font-weight: 500;">JavaScript</p>
+                        </nav>
+                        <nav>
+                            <img src="{% static 'asset/Images/TypeScript_Icon.png' %}" width="100" height="100">
+                            <p style="font-size: 15px;font-weight: 500;">TypeScript</p>
+                        </nav>
+                        <nav>
+                            <img src="{% static 'asset/Images/JQuery.svg' %}" width="100" height="100">
+                            <p style="font-size: 15px;font-weight: 500;">JQuery</p>
+                        </nav>
+                        <nav>
+                            <img src="{% static 'asset/Images/Java.png' %}" width="100" height="100">
+                            <p style="font-size: 15px;font-weight: 500;">JAVA</p>
+                        </nav>
+                        <nav>
+                            <img src="{% static 'asset/Images/Kotlin.png' %}" width="100" height="100">
+                            <p style="font-size: 15px;font-weight: 500;">Kotlin</p>
+                        </nav>
+                        <nav>
+                            <img src="{% static 'asset/Images/Python.jfif' %}" width="100" height="100">
+                            <p style="font-size: 15px;font-weight: 500;">Python</p>
+                        </nav>
+                        <nav>
+                            <img src="{% static 'asset/Images/Assembly.png' %}" width="100" height="100">
+                            <p style="font-size: 15px;font-weight: 500;">Assembly</p>
+                        </nav>
+                    </div>
+                </div>
+                
+            </div>
+            <!--Web Application-->
+            <button type="button" class="collapsible active" style="display: block;">Web Application<i
+                    class="fas fa-chevron-up"></i></button>
+            <div class="content" style="display: block;">
+                <div class="skill-flex-container">
+                    <nav>
+                        <img src="{% static 'asset/Images/Angular_Icon.png' %}" width="100" height="100">
+                        <p style="font-size: 15px;font-weight: 500;">Angular</p>
+                    </nav>
+                    <nav>
+                        <img src="{% static 'asset/Images/Html_Icon.png' %}" width="100" height="100">
+                        <p style="font-size: 15px;font-weight: 500;">HTML</p>
+                    </nav>
+                    <nav>
+                        <img src="{% static 'asset/Images/Css_Icon.png' %}" width="100" height="100">
+                        <p style="font-size: 15px;font-weight: 500;">CSS</p>
+                    </nav>
+                    <nav>
+                        <img src="{% static 'asset/Images/Scss_Icon.jpeg' %}" width="100" height="100">
+                        <p style="font-size: 15px;font-weight: 500;">SASS</p>
+                    </nav>
+                    <nav>
+                        <img src="{% static 'asset/Images/Express_Icon.jfif' %}" width="100" height="100">
+                        <p style="font-size: 15px;font-weight: 500;">Express</p>
+                    </nav>
+                    <nav>
+                        <img src="{% static 'asset/Images/NodeJS_Icon.png' %}" width="100" height="100">
+                        <p style="font-size: 15px;font-weight: 500;">NodeJS</p>
+                    </nav>
+                    <nav>
+                        <img src="{% static 'asset/Images/PHP.jfif' %}" width="100" height="100">
+                        <p style="font-size: 15px;font-weight: 500;">PHP</p>
+                    </nav>
+                </div>
+            </div>
+
+            <!--Desktop Application-->
+            <button type="button" class="collapsible active">Desktop Application<i
+                    class="fas fa-chevron-up"></i></button>
+            <div class="content" style="display: block;">
+                <div class="skill-flex-container">
+                    <nav>
+                        <img src="{% static 'asset/Images/WPF.png' %}" width="100" height="100">
+                        <p style="font-size: 15px;font-weight: 500;">WPF</p>
+                    </nav>
+                    <nav>
+                        <img src="{% static 'asset/Images/DotNet.png' %}" width="100" height="100">
+                        <p style="font-size: 15px;font-weight: 500;">.Net</p>
+                    </nav>
+                </div>
+            </div>
+
+            <!--Mobile Application-->
+            <button type="button" class="collapsible active">Mobile Application<i
+                    class="fas fa-chevron-up"></i></button>
+            <div class="content" style="display: block;">
+                <div class="skill-flex-container">
+                    <nav>
+                        <img src="{% static 'asset/Images/Android Studio.jfif' %}" width="100" height="100">
+                        <p style="font-size: 15px;font-weight: 500;">Android Studio</p>
+                    </nav>
+                    <nav>
+                        <img src="{% static 'asset/Images/Flutter.png' %}" width="100" height="100">
+                        <p style="font-size: 15px;font-weight: 500;">Flutter</p>
+                    </nav>
+                </div>
+            </div>
+
+            <!--Style Library-->
+            <button type="button" class="collapsible active">Database<i
+                    class="fas fa-chevron-up"></i></button>
+            <div class="content" style="display: block;">
+                <div class="skill-flex-container">
+                    <nav>
+                        <img src="{% static 'asset/Images/Oracle Database.jfif' %}" width="100" height="100">
+                        <p style="font-size: 15px;font-weight: 500;">Oracle</p>
+                    </nav>
+                    <nav>
+                        <img src="{% static 'asset/Images/MongoDB.jfif' %}" width="100" height="100">
+                        <p style="font-size: 15px;font-weight: 500;">MongoDB</p>
+                    </nav>
+                    <nav>
+                        <img src="{% static 'asset/Images/SSMS.png' %}" width="100" height="100">
+                        <p style="font-size: 15px;font-weight: 500;">SQL Server Management Studio</p>
+                    </nav>
+                    <nav>
+                        <img src="{% static 'asset/Images/MYSQL.jfif' %}" width="100" height="100">
+                        <p style="font-size: 15px;font-weight: 500;">MySQL</p>
+                    </nav>
+                </div>
+            </div>
+
+            <!--Style Library-->
+            <button type="button" class="collapsible active">Style Package Library<i
+                    class="fas fa-chevron-up"></i></button>
+            <div class="content" style="display: block;">
+                <div class="skill-flex-container">
+                    <nav>
+                        <img src="{% static 'asset/Images/Angular_Material.png' %}" width="100" height="100">
+                        <p style="font-size: 15px;font-weight: 500;">Angular Material</p>
+                    </nav>
+                    <nav>
+                        <img src="{% static 'asset/Images/Bootstrap.png' %}" width="100" height="100">
+                        <p style="font-size: 15px;font-weight: 500;">Bootstrap</p>
+                    </nav>
+                    <nav>
+                        <img src="{% static 'asset/Images/JQueryMobile.png' %}" width="100" height="100">
+                        <p style="font-size: 15px;font-weight: 500;">JQueryMobile</p>
+                    </nav>
+                    <nav>
+                        <img src="{% static 'asset/Images/Quasar.png' %}" width="100" height="100">
+                        <p style="font-size: 15px;font-weight: 500;">Vue Quasar</p>
+                    </nav>
+                </div>
+            </div>
+
+            <!--Artificial Intelligence (AI)-->
+            <button type="button" class="collapsible active">Artificial Intelligence (AI)<i
+                    class="fas fa-chevron-up"></i></button>
+            <div class="content" style="display: block;">
+                <div class="skill-flex-container">
+                    <nav>
+                        <img src="{% static 'asset/Images/Flask.png' %}" width="100" height="100">
+                        <p style="font-size: 15px;font-weight: 500;">Flask</p>
+                    </nav>
+                    <nav>
+                        <img src="{% static 'asset/Images/Sklearn.png' %}" width="100" height="100">
+                        <p style="font-size: 15px;font-weight: 500;">Sklearn</p>
+                    </nav>
+                    <nav>
+                        <img src="{% static 'asset/Images/Pytorch.png' %}" width="100" height="100">
+                        <p style="font-size: 15px;font-weight: 500;">Pytorch</p>
+                    </nav>
+                    <nav>
+                        <img src="{% static 'asset/Images/OpenCV.png' %}" width="100" height="100">
+                        <p style="font-size: 15px;font-weight: 500;">OpenCV</p>
+                    </nav>
+                </div>
+            </div>
+
+            <!--Data Analysis-->
+            <button type="button" class="collapsible active">Data Analysis<i class="fas fa-chevron-up"></i></button>
+            <div class="content" style="display: block;">
+                <div class="skill-flex-container">
+                    <nav>
+                        <img src="{% static 'asset/Images/D3.jfif' %}" width="100" height="100">
+                        <p style="font-size: 15px;font-weight: 500;">D3</p>
+                    </nav>
+                    <nav>
+                        <img src="{% static 'asset/Images/Databrick.png' %}" width="100" height="100">
+                        <p style="font-size: 15px;font-weight: 500;">DataBrick</p>
+                    </nav>
+                    <nav>
+                        <img src="{% static 'asset/Images/PowerBI.jfif' %}" width="100" height="100">
+                        <p style="font-size: 15px;font-weight: 500;">PowerBI</p>
+                    </nav>
+                    <nav>
+                        <img src="{% static 'asset/Images/Numpy.png' %}" width="100" height="100">
+                        <p style="font-size: 15px;font-weight: 500;">Numpy</p>
+                    </nav>
+                    <nav>
+                        <img src="{% static 'asset/Images/Pandas.png' %}" width="100" height="100">
+                        <p style="font-size: 15px;font-weight: 500;">Pandas</p>
+                    </nav>
+                    <nav>
+                        <img src="{% static 'asset/Images/Matplotlib.png' %}" width="100" height="100">
+                        <p style="font-size: 15px;font-weight: 500;">Matplotlib</p>
+                    </nav>
+                </div>
+            </div>
+
+            <!--Operating System, Network, & IoT-->
+            <button type="button" class="collapsible active">Network, Operating System & IoT<i
+                    class="fas fa-chevron-up"></i></button>
+            <div class="content" style="display: block;">
+                <div class="skill-flex-container">
+                    <nav>
+                        <img src="{% static 'asset/Images/Networking.jpg' %}" width="100" height="100">
+                        <p style="font-size: 15px;font-weight: 500;">Networking</p>
+                    </nav>
+                    <nav>
+                        <img src="{% static 'asset/Images/Packet Tracer.png' %}" width="100" height="100">
+                        <p style="font-size: 15px;font-weight: 500;">Packet Tracer</p>
+                    </nav>
+                    <nav>
+                        <img src="{% static 'asset/Images/Arduino.png' %}" width="100" height="100">
+                        <p style="font-size: 15px;font-weight: 500;">Arduino</p>
+                    </nav>
+                    <nav>
+                        <img src="{% static 'asset/Images/Docker.png' %}" width="100" height="100">
+                        <p style="font-size: 15px;font-weight: 500;">Docker</p>
+                    </nav>
+                </div>
+            </div>
+
+            <button type="button" class="collapsible active">General<i class="fas fa-chevron-up"></i></button>
+            <div class="content" style="display: block;">
+                <div class="skill-flex-container">
+                    <nav>
+                        <img src="{% static 'asset/Images/Microsoft_Excel.webp' %}" width="100" height="100">
+                        <p style="font-size: 15px;font-weight: 500;">Microsoft Excel</p>
+                    </nav>
+                    <nav>
+                        <img src="{% static 'asset/Images/Microsoft Word.png' %}" width="100" height="100">
+                        <p style="font-size: 15px;font-weight: 500;">Microsoft Word</p>
+                    </nav>
+                    <nav>
+                        <img src="{% static 'asset/Images/Microsoft_Powepoint.png' %}" width="100" height="100">
+                        <p style="font-size: 15px;font-weight: 500;">Microsoft Powerpoint</p>
+                    </nav>
+                    <nav>
+                        <img src="{% static 'asset/Images/Microsoft_Access.jfif' %}" width="100" height="100">
+                        <p style="font-size: 15px;font-weight: 500;">Microsoft Access</p>
+                    </nav>
+                    <nav>
+                        <img src="{% static 'asset/Images/Other.png' %}" width="100" height="100">
+                        <p style="font-size: 15px;font-weight: 500;">Others</p>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <script>
+            var collapseList = document.getElementsByClassName("collapsible");
+            var i;
+            for (i = 0; i < collapseList.length; i++) {
+                collapseList[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.display === "block") {
+                        content.style.display = "none";
+                    } else {
+                        content.style.display = "block";
+                    }
+                });
+            }
+        </script>
+    </div>
+
+    <div class="footer">
+        <p style="padding-left: 50px;">&copy; Copyright 2023</p>
+        <p style="margin-right: 20px;">Powered by &#9733; Chuah Jing Quan</p>
+        <div style="padding-right: 50px;">
+            <a href="https://github.com/quan1354" style="padding-right: 10px;"><img width="40px" src="{% static 'asset/Images/github.svg' %}"
+                    alt="GitHub"></a>
+            <a href="https://www.linkedin.com/in/chuah-jing-quan-796a80174"><img width="40px" src="{% static 'asset/Images/linkedin.svg' %}"
+                    alt="LinkedIn"></a>
+        </div>
+    </div>
+</body>
+<!-- <script src="script.js"></script> -->
+
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuah Jing Quan</title>
+    <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/script.js' %}" defer></script>
+    <!-- <link rel="icon" type="image/jpg" href="asset/Images/cat.jpg"> -->
+    <link rel="icon" type="image/jpg" href="{% static 'asset/Images/cat.jpg' %}">
+</head>
+
+<body>
+    <div class="header">
+        <div class="header_inner responsive_wrapper">
+            <div class="header_logo" style="padding-left: 50px;">
+                <p>CHUAH JING QUAN</p>
+            </div>
+            <div class="header_navigation">
+                <ul>
+                    <!-- <li><a href="about.html" class="selected">About</a></li>
+                    <li><a href="skill.html">Skill</a></li>
+                    <li><a href="project.html">Project</a></li>
+                    <li><a href="contact.html">Contact</a></li> -->
+                    <li><a href="/about" class="selected">About</a></li>
+                    <li><a href="/skill">Skill</a></li>
+                    <li><a href="/project">Project</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/journal">Journal</a></li>
+                </ul>
+            </div>
+            <div class="header_tools" style="padding-right: 30px;">
+                <span class="mode_icon">&#127774;</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="main_container">
+        <div class="container">
+            <div class="bio" style="padding-bottom: 20px;">
+                <div style="text-align: center;padding: 20px 0px;background-color: rgb(67, 181, 247);;font-size: 3em; margin-bottom:10px ;font-weight: 600;">CHUAH JING QUAN
+                </div>
+                <div class="float_box">
+                    <img src="{% static 'asset/Images/Me.jpg' %}" width="25%">
+                    <p class="float_box_p" style="text-wrap: wrap;line-height: 1.5em">Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Voluptatem quam nihil officiis adipisci, tempore officia voluptate fuga provident. Quos
+                        autem omnis cupiditate quisquam eveniet dolore consequuntur praesentium, mollitia ab blanditiis.
+                    </p>
+                </div>
+            </div>
+
+            <div class="experience">
+                <div style="text-align: center;padding: 20px 0px;background-color: rgb(67, 125, 250);font-size: 3em; margin-bottom:10px ;font-weight: 600;">EXPERIENCE</div>
+                <div class="experience_box">
+                    <div class="experience_first">
+                        <img id="company_outview" width="100%" height="450" src="{% static 'asset/Images/greatech_outview.jpg' %}" alt="Company Outview"/>
+                        <img id="company_logo" width="90%" src="{% static 'asset/Images/greatech.png' %}" alt="Greatech Logo"/>
+                        <span id="company_name">GREATECH INTEGRATION (M) SDN. BHD.</span>
+                        <p class="text-center">Position <br/> <span class="highlight">Software Intern</span></p>
+                        <p class="text-center">Department <br/> <span class="highlight">Semicon Automation (R&D)</span></p>
+                        <p class="text-center">Duration <br/> <span class="highlight">1/6/2023 - 18/8/2023</span></p>
+                        <div id="company_role">
+                            <dl>
+                                <dt class="text-center">Work</dt>
+                                <dd>
+                                    <li></li>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div id="company_tool_skill">
+                            <dl>
+                                <dt class="text-center">Tools And Skills</dt>
+                                <dd>
+                                    <li></li>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div id="company_attachment">
+                            <button><a href="https://drive.google.com/file/d/1euiKPdLmT_XCMgMh68d_4MdLrOCvZAqu/view?usp=sharing" target="_blank" style="text-decoration: none;color: inherit;">Weekly Log</a></button>
+                            <button><a target="_blank" href="https://drive.google.com/file/d/1j6Nv3DQpP_wCLVLHzSsMntvkLpqDxlpb/view?usp=sharing" style="text-decoration: none;color: inherit;">Intern Report</a></button>
+                            <button id="showImageBtn">Attachment</button>
+                            <div id="imageOverlay">
+                                <button id="closeImageBtn">X</button>
+                                <div id="imageContainer">
+                                    <img id="currentImage" src="" width="550px" height="550px" alt="Image">
+                                    <div id="thumbnailContainer"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience_box" style="margin-top: 1em;">
+                    <div class="experience_first">
+                        <!-- <img id="company_outview" width="100%" height="450" src="asset/Images/greatech_outview.jpg" alt="Company Outview"/> -->
+                        <img style="grid-column: span 3;justify-self: center;padding: 20px 0px;" width="30%" src="{% static 'asset/Images/global_connect_Logo.png' %}" alt="Greatech Logo"/>
+                        <span id="company_name">GLOBAL CONNECT RESOURCES SDN. BHD.</span>
+                        <p class="text-center">Position <br/> <span class="highlight">Front-End Intern</span></p>
+                        <p class="text-center">Department <br/> <span class="highlight">Front-end </span></p>
+                        <p class="text-center">Duration <br/> <span class="highlight">1/10/2020 - 31/12/2020</span></p>
+                        <div id="company_role">
+                            <dl>
+                                <dt class="text-center">Work</dt>
+                                <dd>
+                                    <li></li>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div id="company_tool_skill">
+                            <dl>
+                                <dt class="text-center">Tools And Skills</dt>
+                                <dd>
+                                    <li></li>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="education" style="padding-top: 20px;">
+                <div style="text-align: center;padding: 20px 0px;background-color: rgb(134, 164, 255);;font-size: 3em; margin-bottom:10px ;font-weight: 600;">EDUCATION
+                </div>
+                <div class="education_tabs">
+                    <div class="education_tab_selection">
+                        <button class="selected" onclick="opentab(event)">University</button>
+                        <button onclick="opentab(event)">College</button>
+                        <button onclick="opentab(event)">Secondary School</button>
+                        <button onclick="opentab(event)">Primary School</button>
+                    </div>
+                    <div class="education_tab_content">
+                        <div class="tab_effect" id="University" style="display: block;border-top: 3px solid;border-bottom: 3px solid;border-right: 3px solid;">
+                            <div style="border-bottom: 3px solid;">
+                                <p style="font-weight: 600;" class="text-center">UOW KDU PENANG UNIVERSITY COLLEGE</p>
+                            </div>
+                            <div class="float_box" style="border-top: none;border-right: none;border-bottom: none;">
+                                <img src="{% static 'asset/Images/KDU Logo.png' %}"  width="28%">
+                                <p style="text-wrap: wrap;line-height: 1.5em; text-align: justify;padding-left: 31%;padding-right: 20px;">Lorem ipsum dolor sit amet consectetur adipisicing
+                                   
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="tab_effect" id="College" style="display: none;">
+                            <div style="border: 3px solid;">
+                                <p style="font-weight: 600;" class="text-center">Tunku Abdul Rahman University of Management and Technology</p>
+                            </div>
+                            <div class="float_box" style="border-top: none;">
+                                <img src="{% static 'asset/Images/TARUMT Logo.png' %}" width="28%">
+                                <p style="text-wrap: wrap;line-height: 1.5em; text-align: justify;padding-left: 31%;padding-right: 20px;">Lorem ipsum dolor sit amet consectetur adipisicing
+                                    elit. Voluptatem quam nihil officiis adipisci, tempore officia voluptate fuga provident. Quos
+                                    autem omnis cupiditate quisquam eveniet dolore consequuntur praesentium, mollitia ab blanditiis.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="tab_effect" id="Secondary School" style="display: none;">
+                            <div style="border: 3px solid;">
+                                <p style="font-weight: 600;" class="text-center">SMK Valdor</p>
+                            </div>
+                            <div class="float_box" style="border-top: none;">
+                                <img src="{% static 'asset/Images/SMK Valdor_Logo.jpg' %}" width="28%">
+                                <p style="text-wrap: wrap;line-height: 1.5em; text-align: justify;padding-left: 31%;padding-right: 20px;">Lorem ipsum dolor sit amet consectetur adipisicing
+                                    elit. Voluptatem quam nihil officiis adipisci, tempore officia voluptate fuga provident. Quos
+                                    autem omnis cupiditate quisquam eveniet dolore consequuntur praesentium, mollitia ab blanditiis.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="tab_effect" id="Primary School" style="display: none;">
+                            <div style="border: 3px solid;">
+                                <p style="font-weight: 600;" class="text-center">SJK(C) Kampung Valdor</p>
+                            </div>
+                            <div class="float_box" style="border-top: none;">
+                                <img src="{% static 'asset/Images/Kampung Valdor Logo.jpeg' %}" width="28%">
+                                <p style="text-wrap: wrap;line-height: 1.5em; text-align: justify;padding-left: 31%;padding-right: 20px;">Lorem ipsum dolor sit amet consectetur adipisicing
+                                    elit. Voluptatem quam nihil officiis adipisci, tempore officia voluptate fuga provident. Quos
+                                    autem omnis cupiditate quisquam eveniet dolore consequuntur praesentium, mollitia ab blanditiis.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="footer">
+        <p style="padding-left: 50px;">&copy; Copyright 2023</p>
+        <p style="padding-right: 6%;">Powered by &#9733; Chuah Jing Quan</p>
+        <div style="padding-right: 50px;">
+            <a href="https://github.com/quan1354" style="padding-right: 10px;"><img width="40px" src="{% static 'asset/Images/github.svg' %}"
+                    alt="GitHub"></a>
+            <a href="https://www.linkedin.com/in/chuah-jing-quan-796a80174"><img width="40px" src="{% static 'asset/Images/linkedin.svg' %}"
+                    alt="LinkedIn"></a>
+        </div>
+    </div>
+</body>
+<!-- <script src="script.js"></script> -->
+</html>

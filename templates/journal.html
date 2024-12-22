@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Note-Taking</title>
+    <link href="{% static 'css/quill.snow.css' %}" rel="stylesheet">
+    <script src="{% static 'js/quill.min.js' %}"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main_container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .controls-row {
+            display: flex;
+            flex-wrap: nowrap;
+            /* Ensure all elements are on the same row */
+            align-items: center;
+            /* Vertically center fields */
+            margin-bottom: 20px;
+            gap: 10px;
+            /* Add consistent spacing between fields */
+        }
+
+        .controls-row select,
+        .controls-row input,
+        .controls-row button {
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #fff;
+            font-size: 14px;
+            color: #333;
+            flex: 0 0 auto;
+            /* Prevent fields from stretching */
+        }
+
+        .controls-row select:focus,
+        .controls-row input:focus,
+        .controls-row button:focus {
+            outline: none;
+            border-color: #007BFF;
+        }
+
+        .controls-row button {
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+
+        .controls-row button:hover {
+            background-color: #0056b3;
+        }
+
+        .note-editor {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            height: 600px;
+            /* Increase height */
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            box-sizing: border-box;
+            overflow: auto;
+            /* Ensure scroll for long content */
+        }
+
+        #notesContainer .note-card,
+        #pinnedNotesContainer .note-card {
+            background: #f9f9f9;
+            padding: 15px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            /* Prevent images from overflowing the container */
+        }
+
+        #notesContainer .note-card .note-header {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .note-actions {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .note-actions button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            padding: 5px 10px;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+
+        .note-actions button:hover {
+            background-color: #0056b3;
+        }
+
+        #togglePinnedNotesButton {
+            display: block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background-color: #ff9800;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        #togglePinnedNotesButton:hover {
+            background-color: #e68900;
+        }
+
+        /* Fix for large images */
+        #notesContainer .note-card img,
+        #pinnedNotesContainer .note-card img {
+            max-width: 100%;
+            /* Ensure the image width does not exceed the container */
+            height: auto;
+            /* Maintain the aspect ratio */
+            display: block;
+            /* Prevent inline display issues */
+            margin: 10px auto;
+            /* Center the image */
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <div class="main_container">
+        <!-- Button to toggle visibility of all pinned notes -->
+        <button id="togglePinnedNotesButton" style="font-size: large;font-weight: bold;">Collapse Pinned Notes</button>
+
+        <!-- Pinned Notes Section -->
+        <div id="pinnedNotesContainer"></div>
+
+        <h2 style="text-align: center;background: #007BFF;padding: 1rem 0px;color: white;">NOTE BOX</h2>
+        <!-- Editor -->
+        <div id="editorContainer">
+            <div id="editor" class="note-editor"></div>
+        </div>
+
+        <!-- Additional Controls Row -->
+        <div class="controls-row">
+            <select id="noteCategory" class="note-category">
+                <option value="">Select a Category</option>
+                <option value="Work" selected>Work</option>
+                <option value="Personal">Personal</option>
+                <option value="Ideas">Ideas</option>
+            </select>
+            <button id="saveNoteButton">Save Note</button>
+            <label>
+                <input type="checkbox" id="pinNoteCheckbox"> Pin this note
+            </label>
+
+        </div>
+
+        <h2 style="text-align: center;background: #007BFF;padding: 1rem 0px;color: white;">MY NOTES COLLECTION</h2>
+
+        <!-- Controls Row -->
+        <div class="controls-row">
+            <input type="date" id="startDateFilter" placeholder="Start Date">
+            <input type="date" id="endDateFilter" placeholder="End Date">
+            <select id="categoryFilter" class="category-filter">
+                <option value="">All Categories</option>
+                <option value="Work">Work</option>
+                <option value="Personal">Personal</option>
+                <option value="Ideas">Ideas</option>
+            </select>
+            <button id="applyDateFilterButton">Apply Filters</button>
+        </div>
+        <!-- Notes Container -->
+        <div id="notesContainer"></div>
+    </div>
+
+    <script>
+        const apiUrl = '/'; // Base API URL
+        const pinnedNotesContainer = document.getElementById('pinnedNotesContainer');
+        const notesContainer = document.getElementById('notesContainer');
+        const saveNoteButton = document.getElementById('saveNoteButton');
+        const categoryFilter = document.getElementById('categoryFilter');
+        const noteCategory = document.getElementById('noteCategory');
+        const startDateFilter = document.getElementById('startDateFilter');
+        const endDateFilter = document.getElementById('endDateFilter');
+        const applyDateFilterButton = document.getElementById('applyDateFilterButton');
+        const pinNoteCheckbox = document.getElementById('pinNoteCheckbox');
+
+
+
+        let editingNoteId = null;
+        // Reference the toggle button
+        const togglePinnedNotesButton = document.getElementById('togglePinnedNotesButton');
+
+        // Track the current state of pinned notes visibility
+        let arePinnedNotesCollapsed = true;
+
+        pinnedNotesContainer.style.display = 'none'; // Hide pinned notes container
+        togglePinnedNotesButton.textContent = 'Expand Pinned Notes'; // Set button text to "Expand Pinned Notes"
+
+        // Function to toggle visibility of pinned notes
+        togglePinnedNotesButton.addEventListener('click', () => {
+            arePinnedNotesCollapsed = !arePinnedNotesCollapsed; // Toggle the state
+            pinnedNotesContainer.style.display = arePinnedNotesCollapsed ? 'none' : 'block';
+            togglePinnedNotesButton.textContent = arePinnedNotesCollapsed ? 'Expand Pinned Notes' : 'Collapse Pinned Notes';
+        });
+
+        const renderNotes = (notes) => {
+            pinnedNotesContainer.innerHTML = '';
+            notesContainer.innerHTML = '';
+
+            notes.forEach(note => {
+                const card = document.createElement('div');
+                card.className = 'note-card';
+
+                // Add the original image display
+                const imageHTML = note.content.includes('<img') ? `
+        ` : '';
+
+                card.innerHTML = `
+            <div class="note-header">${new Date(note.timestamp).toLocaleString()} - ${note.category}</div>
+            <div>${note.content}</div>
+            ${imageHTML}
+            <div class="note-actions">
+                <button onclick="editNote(${note.id})">Edit</button>
+                <button onclick="togglePin(${note.id}, ${note.pinned ? 0 : 1})">${note.pinned ? 'Unpin' : 'Pin'}</button>
+                <button onclick="deleteNote(${note.id})">Delete</button>
+            </div>
+        `;
+
+                if (note.pinned) {
+                    pinnedNotesContainer.appendChild(card);
+                } else {
+                    notesContainer.appendChild(card);
+                }
+            });
+        };
+
+
+        // Set default date range to last 6 months to next day
+        const today = new Date();
+        const sixMonthsAgo = new Date();
+        const tomorrow = new Date();
+
+        sixMonthsAgo.setMonth(today.getMonth() - 6);
+        tomorrow.setDate(today.getDate() + 1);
+
+        const formatDate = (date) => date.toISOString().split('T')[0];
+
+        startDateFilter.value = formatDate(sixMonthsAgo); // Default start date: 6 months ago
+        endDateFilter.value = formatDate(tomorrow); // Default end date: next day
+
+        const fetchNotes = async (category = categoryFilter.value, startDate = startDateFilter.value, endDate = endDateFilter.value) => {
+            const response = await fetch(`${apiUrl}get_notes/?category=${category}&start_date=${startDate}&end_date=${endDate}`);
+            const notes = await response.json();
+            renderNotes(notes);
+        };
+
+        saveNoteButton.addEventListener('click', async () => {
+            const content = quill.root.innerHTML;
+            const category = noteCategory.value;
+            const pinned = pinNoteCheckbox.checked ? 1 : 0;
+
+            if (!content.trim() || !category) return alert('Please fill out all fields.');
+
+            const endpoint = editingNoteId ? `${apiUrl}edit_note/` : `${apiUrl}save_note/`;
+            const payload = {
+                content,
+                category,
+                timestamp: new Date().toISOString(),
+                pinned,
+                id: editingNoteId || Date.now(),
+            };
+
+            await fetch(endpoint, {
+                method: 'POST',
+                body: JSON.stringify(payload),
+            });
+
+            quill.setContents([]);
+            noteCategory.value = ''; // Reset category
+            pinNoteCheckbox.checked = false; // Reset pin checkbox
+            editingNoteId = null; // Reset editing mode
+            fetchNotes(categoryFilter.value, startDateFilter.value, endDateFilter.value); // Refresh notes
+        });
+
+        applyDateFilterButton.addEventListener('click', () => {
+            fetchNotes(categoryFilter.value, startDateFilter.value, endDateFilter.value);
+        });
+
+        window.togglePin = async (id, pinned) => {
+            const response = await fetch(`${apiUrl}get_notes/`);
+            const notes = await response.json();
+            const noteToToggle = notes.find(note => note.id === id);
+
+            if (noteToToggle) {
+                noteToToggle.pinned = pinned;
+                await fetch(`${apiUrl}edit_note/`, {
+                    method: 'POST',
+                    body: JSON.stringify(noteToToggle),
+                });
+                fetchNotes(categoryFilter.value, startDateFilter.value, endDateFilter.value);
+            }
+        };
+
+        fetchNotes();
+
+        // Initialize Quill editor
+        const quill = new Quill('#editor', {
+            theme: 'snow',
+            modules: {
+                toolbar: [
+                    ['bold', 'italic', 'underline'],
+                    [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+                    ['code-block'],
+                    ['image'],
+                ],
+            },
+        });
+
+        window.editNote = async (id) => {
+            try {
+                const response = await fetch(`${apiUrl}get_notes/`);
+                const notes = await response.json();
+                const noteToEdit = notes.find(note => note.id === id);
+
+                if (noteToEdit) {
+                    quill.root.innerHTML = noteToEdit.content; // Load the note content into the editor
+                    noteCategory.value = noteToEdit.category; // Set the note category
+                    pinNoteCheckbox.checked = noteToEdit.pinned; // Set the pinned status
+                    editingNoteId = noteToEdit.id; // Set the editing note ID
+                } else {
+                    alert('Note not found for editing.');
+                }
+            } catch (error) {
+                console.error('Error fetching note for editing:', error);
+            }
+        };
+
+        window.deleteNote = async (id) => {
+            if (!confirm('Are you sure you want to delete this note?')) return;
+
+            try {
+                await fetch(`${apiUrl}delete_note/`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ id }),
+                });
+
+                fetchNotes(categoryFilter.value, startDateFilter.value, endDateFilter.value); // Refresh notes after deletion
+            } catch (error) {
+                console.error('Error deleting note:', error);
+                alert('Failed to delete the note.');
+            }
+        };
+
+
+
+    </script>
+</body>
+
+</html>
