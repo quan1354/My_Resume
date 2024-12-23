@@ -1,0 +1,118 @@
+body{
+    font-size: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.main_container{
+    display:block;
+    background: aqua;
+    padding: 0.2em 1em;
+    height: min-content;
+}
+
+/* How Position work ? */
+.position_title{
+    position: relative; /*static | relative | absolute | fixed | sticky*/
+    top: 0;
+    /* left: 0;
+    right: 0; */
+    z-index: 10;
+    width: 50%;
+    /* filter: grayscale(1); */
+    background-color: rgb(255, 0, 162);
+}
+
+.position_content_left{
+    width: 30%;
+    background-color: rgb(180, 145, 70);
+    padding: 20px;
+}
+
+.position_content_right{
+    position: sticky;
+    align-self: start;
+    background-color: steelblue;
+    top:0%;
+
+    width: 70%;
+    padding: 20px;
+}
+
+.position_nav_header{
+    background-color: blanchedalmond;
+    position: sticky;
+    top: 0;
+}
+
+/* How Float work ? */
+.float-left{
+    float: left;
+}
+
+.float-right{
+    float: right;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+@media screen and (max-width: 768px) {
+    .float-left, .float-right {
+        float: none;
+        display: block;
+        margin: 0 auto; 
+    }
+}
+
+/* How Flex work ? */
+.flexbox{
+    height: 30vh;
+    border: 5px solid black;
+    display: flex; /*inline-flex;*/
+    flex-direction: column; /*row | row-reverse | column-reverse*/
+    flex-wrap: wrap; /*wrap-reverse | nowrap*/
+    flex-flow: row wrap;  /*<flex-direction><flex-wrap>*/
+    justify-content: center; /*flex-start | flex-end | space-between | space-evenly | space-around*/
+    align-items: stretch;/* stretch | flex-end | center | flex-start | baseline (find the balance of line btw all items, then align items based on the line)*/
+    align-content: stretch;/*stretch | flex-start | flex-end | center | space-between | space-around*/
+    gap: 3;
+}
+
+.item_3{
+    order: 0;
+    flex-grow: 2;
+    flex-basis: 40px; /*set initial size of item*/
+    flex-shrink: 0; /*Even minimize screen, flex-item no shrink*/
+    align-self: flex-start;
+}
+
+/* How Grid work ? */
+.gridbox{
+    display: grid;
+    height: 20vh;
+    grid-template: 1fr 50px / 100%; /*grid-template: "Row" / "Col";*/
+    grid-template-rows: 20% 20% 20% 20% 20%;
+    grid-template-columns: 20% 20% 20% 20% 20%; /*repeat(5, 20%)*/
+    
+}
+
+.grid_item_1{
+    background-color: burlywood;
+    /* How make content fill center of Grid */
+    grid-column-start: 3; /*2*/
+    grid-column-end: 5; /*-2*/
+}
+
+.grid_item_2{
+    background-color: rgb(12, 255, 81);
+    grid-row-start: 2;
+    grid-column-end: span 2;
+    /*How Fraction ? (son = start. parent=end)*/
+    grid-column: 2/5; /*span 2/5 (start from back, col 5 fill to front 2)*/
+    grid-row: 3;
+    order: 0; /*for item*/
+}

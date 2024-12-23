@@ -25,6 +25,10 @@ def skill(request):
     # return HTTPResponse("My about Page")
     return render(request, 'skill.html')
 
+def css(request):
+    # return HTTPResponse("My about Page")
+    return render(request, 'css.html')
+
 import json
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt

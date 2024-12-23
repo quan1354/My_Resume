@@ -26,6 +26,7 @@ urlpatterns = [
     path('journal/', views.journal, name='journal'),
     path('project/', views.project, name='project'),
     path('skill/', views.skill, name='skill'),
+    path('css/', views.css, name='css'),
 
     path('get_notes/', views.get_notes, name='get_notes'),
     path('save_note/', views.save_note, name='save_note'),

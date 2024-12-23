@@ -71,20 +71,24 @@ body {
     list-style: none;
     display: flex;
     justify-content: center;
-    padding-right: 45%;
+    margin-right: 45%;
 }
 
-.header_navigation li:nth-child(n+2):nth-child(-n+3) {
+/* .header_navigation li:nth-child(n+2):nth-child(-n+3):nth-child(n+3) {
+    padding: 0px 1em;
+} */
+
+.header_navigation li{
     padding: 0px 1em;
 }
 
-.header_navigation li:first-child {
+/* .header_navigation li:first-child {
     padding-right: 1em;
-}
+} */
 
-.header_navigation li:last-child {
+/* .header_navigation li:last-child {
     padding-left: 1em;
-}
+} */
 
 .header_navigation li a.selected {
     color: rgb(24, 205, 255);

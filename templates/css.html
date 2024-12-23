@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web Basic Note</title>
+
+    <!--How import style pakage ?-->
+    <!-- <link rel="stylesheet" type="text/css" href="main.css"> -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/play.css' %}">
+    <script src="{% static 'js/play.js' %}" defer></script>
+</head>
+
+<body>
+    <!--How position Work ?-->
+    <!-- <div class="main_container" style="border: 2px black solid;position: absolute;"> -->
+    <div class="main_container">
+        <h2><u>How Position Work ?</u></h2>
+        <div class="position_title">
+            <h1>This is play position</h1>
+        </div>
+        <h2><u>How Position of "Sticky" to navigate header and content ?</u></h2>
+        <div style="display: flex;font-size: 30px;text-align: justify;">
+            <div class="position_content_left">This is left site <br>
+                <h2 class="position_nav_header">First Header</h2>
+                Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Quod quam, voluptas voluptate impedit sit ducimus distinctio quo quia! Architecto sunt illum
+                repellendus necessitatibus nam consectetur facere placeat accusamus a iusto!<br>
+                <h2 class="position_nav_header">Second Header</h2>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit voluptas perspiciatis ab labore accusamus odit. Iste
+                ipsam, aperiam magnam illum ut quam blanditiis, veniam laudantium aut tempore optio debitis
+                molestiae.<br> </div>
+            <div class="position_content_right">This is right site</div>
+        </div>
+    </div>
+    <!--How Float Work ?-->
+    <div class="main_container">
+        <h2><u>How Float Work ?</u></h2>
+        <div class="clearfix">
+            <img class="float-left" src="{% static 'asset/Images/Angular_Icon.png' %}" width="15%" alt="picture">
+            <p>Happy Learning Float</p>
+        </div>
+        <div class="clearfix">
+            <img class="float-right" src="{% static 'asset/Images/Angular_Icon.png' %}" width="15%" alt="picture">
+            <p>Happy Learning Float</p>
+        </div>
+    </div>
+    <!--How Flex Work ?-->
+    <div class="main_container">
+        <h2><u>How Flex Work ?</u></h2>
+        <div class="flexbox">
+            <div class="flex_item item_1" style="background-color: red;">Item 1</div>
+            <div class="flex_item item_2" style="background-color: orange;">Item 2</div>
+            <div class="flex_item item_3" style="background-color: yellow;">Item 3</div>
+            <div class="flex_item item_4" style="background-color: green;">Item 4</div>
+            <div class="flex_item item_5" style="background-color: blue;">Item 5</div>
+            <div class="flex_item item_6" style="background-color: red;">Item 6</div>
+            <div class="flex_item item_7" style="background-color: orange;">Item 7</div>
+            <div class="flex_item item_8" style="background-color: yellow;">Item 8</div>
+            <div class="flex_item item_9" style="background-color: green;">Item 9</div>
+            <div class="flex_item item_10" style="background-color: blue;">Item 10</div>
+        </div>
+    </div>
+    <!--How Grid Work ?-->
+    <div class="main_container">
+        <h2><u>How Grid Work ?</u></h2>
+        <div class="gridbox">
+            <div class="grid_item_1">Grid Item 1</div>
+            <div class="grid_item_2">Grid Item 2</div>
+        </div>
+    </div>
+</body>
+
+</html>
